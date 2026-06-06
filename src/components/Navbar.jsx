@@ -6,7 +6,14 @@ import { ShopContext } from '../context/ShopContext'
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
-  const { setShowSearch, getCartCount } = useContext(ShopContext)
+  const { setShowSearch, getCartCount, token, setToken, navigate } = useContext(ShopContext)
+
+  const logout = () => {
+    localStorage.removeItem('token')
+    setToken('')
+    navigate('/login')
+    setVisible(false)
+  }
 
   return (
     <div className='flex items-center justify-between py-5 font-medium'>
@@ -94,6 +101,11 @@ const Navbar = () => {
           <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/collection'>COLLECTION</NavLink>
           <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/about'>ABOUT</NavLink>
           <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT</NavLink>
+          <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/orders'>ORDERS</NavLink>
+          {token
+            ? <p onClick={logout} className='py-2 pl-6 border cursor-pointer'>LOGOUT</p>
+            : <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/login'>LOGIN</NavLink>
+          }
         </div>
       </div>
 
