@@ -75,7 +75,6 @@ const Login = () => {
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         }}></div>
 
-        {/* Floating 3D Shapes */}
         {[...Array(6)].map((_, i) => (
           <div key={i} style={{
             position: 'absolute',
@@ -130,10 +129,26 @@ const Login = () => {
 
         {/* Title */}
         <div className='text-center mb-8'>
-          <h1 className='text-3xl font-bold text-white mb-2'>
+          <h1 style={{
+            fontSize: '2rem',
+            fontWeight: '900',
+            color: '#d8b4fe',
+            textShadow: '0 0 20px rgba(167,139,250,0.8), 0 0 40px rgba(139,92,246,0.6)',
+            letterSpacing: '1px',
+            marginBottom: '8px'
+          }}>
             {currentState === 'Login' ? '👋 Welcome Back' : '🚀 Join Us'}
           </h1>
-          <p className='text-white/70 text-sm'>SAH E-Commerce</p>
+          <p style={{
+            fontSize: '1.5rem',
+            fontWeight: '900',
+            background: 'linear-gradient(135deg, #e9d5ff, #c084fc, #a855f7)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            letterSpacing: '2px',
+          }}>
+            SAH E-Commerce
+          </p>
         </div>
 
         <form onSubmit={onSubmitHandler} className='flex flex-col gap-4'>
@@ -204,7 +219,7 @@ const Login = () => {
           <button
             type='submit'
             style={{
-              background: 'linear-gradient(135deg, #4f46e5, #764ba2)',
+              background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
               borderRadius: '12px',
               padding: '14px',
               color: 'white',
@@ -213,16 +228,16 @@ const Login = () => {
               border: 'none',
               cursor: 'pointer',
               marginTop: '8px',
-              boxShadow: '0 4px 15px rgba(79,70,229,0.5)',
+              boxShadow: '0 4px 15px rgba(124,58,237,0.5)',
               transition: 'transform 0.2s, box-shadow 0.2s',
             }}
             onMouseEnter={e => {
               e.target.style.transform = 'translateY(-2px)'
-              e.target.style.boxShadow = '0 8px 25px rgba(79,70,229,0.6)'
+              e.target.style.boxShadow = '0 8px 25px rgba(124,58,237,0.7)'
             }}
             onMouseLeave={e => {
               e.target.style.transform = 'translateY(0)'
-              e.target.style.boxShadow = '0 4px 15px rgba(79,70,229,0.5)'
+              e.target.style.boxShadow = '0 4px 15px rgba(124,58,237,0.5)'
             }}
           >
             {currentState === 'Login' ? 'LOGIN' : 'SIGN UP'}
