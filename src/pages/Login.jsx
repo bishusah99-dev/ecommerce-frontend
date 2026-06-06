@@ -132,19 +132,17 @@ const Login = () => {
           <h1 style={{
             fontSize: '2rem',
             fontWeight: '900',
-            color: '#d8b4fe',
-            textShadow: '0 0 20px rgba(167,139,250,0.8), 0 0 40px rgba(139,92,246,0.6)',
+            color: 'white',
+            textShadow: '0 0 20px rgba(255,255,255,0.5)',
             letterSpacing: '1px',
             marginBottom: '8px'
           }}>
             {currentState === 'Login' ? '👋 Welcome Back' : '🚀 Join Us'}
           </h1>
           <p style={{
-            fontSize: '1.5rem',
+            fontSize: '2rem',
             fontWeight: '900',
-            background: 'linear-gradient(135deg, #e9d5ff, #c084fc, #a855f7)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            color: 'white',
             letterSpacing: '2px',
           }}>
             SAH E-Commerce
